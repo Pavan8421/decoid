@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    .lazy-image {
+      width: 100%;
+      max-width: 375px; /* Adjust max-width as needed */
+      animation: slideFromLeft 1s ease-out; /* Animation for sliding from left */
+    }
+    @keyframes slideFromLeft {
+      from {
+        transform: translateX(-100%); /* Start position */
+      }
+      to {
+        transform: translateX(0); /* End position */
+      }
+    }
+  </style>  
+</head>
+<body>
+  <!-- Page Container -->
+  <div class="flex flex-col w-375 h-800 bg-white">
+    <!-- Content Goes Here -->
+    <img src="./images/header.png">
+    <a href="./screen3.html" class="p-3 text-right text-blue-500 text-base">Skip</a>
+    <img id="img3" src="./images/image16.png" class="w-352 h-234 p-10 mb-20 lazy-image">
+    <h1 class="w-160 h-10 p-3 font-montserrat font-bold text-xl">Get Burn</h1>
+    <h1 class="w-343 h-40 p-4 text-base font-montserrat font-medium text-custom_grey">Let's keep burning to achieve your goals, it hurts only temporarily, 
+      if you give up now you will be in pain forever</h1>
+    <div class="flex justify-end">
+      <a href="./screen3.html">
+        <img src="./images/button2.png" class="w-20 h-20">
+      </a>
+    </div>
+  </div>
+</body>
+</html>

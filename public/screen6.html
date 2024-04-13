@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    .signup {
+      width: 343px;
+      height: 50px;
+      background-color: #f1f1f1;
+      border-radius: 0.5rem;
+      margin: 15px;
+    }
+    input::placeholder {
+      color: #7f7f7f;
+    }
+    input[type="checkbox"] {
+      accent-color: red;
+      width: 20px;
+      height: 20px;
+    }
+    .create_button {
+      background-image: linear-gradient(to right, #95BEFF, #7B91FF);
+      width: 343px;
+      height: 50px;
+      border-radius: 0.5rem;
+      color: white;
+    }
+    .hidden {
+      display: none;
+    }
+    .high {
+      height:50px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Page Container -->
+  <div class="flex flex-col w-375 h-800 bg-white">
+    <!-- Content Goes Here -->
+    <img src="./images/header.png">
+    <h1 id="top-heading" class="w-163 h-23 p-4 font-montserrat font-bold text-xl mt-5 ml-5">What are your goals</h1>
+    <div class="w-343 high flex gap-5 justify-between px-5 py-2 mt-11 ml-5 mr-5 rounded-xl bg-zinc-100">
+      <div class="my-auto text-xs font-semibold text-zinc-800">Weight Loss</div>
+      <div class="flex flex-col justify-center">
+        <!-- Replace the horizontal line with a checkbox -->
+        <input type="checkbox" class="shrink-0 rounded border border-indigo-400 border-solid h-[22px]">
+      </div>
+    </div>
+    <div class="w-343 high flex gap-5 justify-between px-5 py-2 mt-7 ml-5 mr-5 rounded-xl bg-zinc-100">
+      <div class="my-auto text-xs font-semibold text-zinc-800">Muscle Gain</div>
+      <div class="flex flex-col justify-center">
+        <!-- Replace the horizontal line with a checkbox -->
+        <input type="checkbox" class="shrink-0 rounded border border-indigo-400 border-solid h-[22px]">
+      </div>
+    </div>
+    <div class="w-343 high flex gap-5 justify-between px-5 py-2 mt-7 ml-5 mr-5 rounded-xl bg-zinc-100">
+      <div class="my-auto text-xs font-semibold text-zinc-800">Flexibility and Movability</div>
+      <div class="flex flex-col justify-center">
+        <!-- Replace the horizontal line with a checkbox -->
+        <input type="checkbox" class="shrink-0 rounded border border-indigo-400 border-solid h-[22px]">
+      </div>
+    </div>
+    <div class="w-343 high flex gap-5 justify-between px-5 py-2 mt-7 ml-5 mr-5 rounded-xl bg-zinc-100">
+      <div class="my-auto text-xs font-semibold text-zinc-800">General Fitness</div>
+      <div class="flex flex-col justify-center">
+        <!-- Replace the horizontal line with a checkbox -->
+        <input type="checkbox" class="shrink-0 rounded border border-indigo-400 border-solid h-[22px]">
+      </div>
+    </div>
+    <div class="w-343 high flex gap-5 justify-between px-5 py-2 mt-7 ml-5 mr-5 rounded-xl bg-zinc-100">
+      <div class="my-auto text-xs font-semibold text-zinc-800">Event-specific training</div>
+      <div class="flex flex-col justify-center">
+        <!-- Replace the horizontal line with a checkbox -->
+        <input type="checkbox" class="shrink-0 rounded border border-indigo-400 border-solid h-[22px]">
+      </div>
+    </div>
+    <div class="w-343 high flex gap-5 justify-between px-5 py-2 mt-7 ml-5 mr-5 rounded-xl bg-zinc-100">
+      <div class="my-auto text-xs font-semibold text-zinc-800">Mindfulness and Mental Health</div>
+      <div class="flex flex-col justify-center">
+        <!-- Replace the horizontal line with a checkbox -->
+        <input type="checkbox" class="shrink-0 rounded border border-indigo-400 border-solid h-[22px]">
+      </div>
+    </div>
+    <button id="confirm" class="create_button justify-center mt-32 ml-3" onclick="pageChange()">
+      Confirm
+    </button>
+    <script>
+      function pageChange() {
+        window.location.href = './screen8.html'
+      }
+    </script>
+</div>
+</body>
+</html>

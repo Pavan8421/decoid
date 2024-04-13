@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    .signup {
+      width: 343px;
+      height: 50px;
+      background-color: #f1f1f1;
+      border-radius: 0.5rem;
+      margin: 15px;
+    }
+    input::placeholder {
+      color: #7f7f7f;
+    }
+    input[type="checkbox"] {
+      accent-color: red;
+      width: 20px;
+      height: 20px;
+    }
+    .create_button {
+      background-image: linear-gradient(to right, #95BEFF, #7B91FF);
+      width: 343px;
+      height: 50px;
+      border-radius: 0.5rem;
+      color: white;
+    }
+    .hidden {
+      display: none;
+    }
+    @keyframes moveUp {
+      0% {
+        transform: translateY(+60px);
+      }
+      100% {
+        transform: translateY(-10px); /* Adjust the distance as needed */
+      }
+    }
+    .move-up-animation {
+      animation: moveUp 0.5s forwards; /* Adjust the duration as needed */
+    }
+  </style>
+</head>
+<body>
+  <!-- Page Container -->
+  <div class="flex flex-col w-375 h-800 bg-white">
+    <!-- Content Goes Here -->
+    <img src="./images/header.png">
+    <form id="signupForm" class="flex flex-col">
+      <h1 id="top-heading" class="w-163 h-23 p-4 font-montserrat font-bold text-xl mt-5">Create an Account</h1>
+      <input type="text" id="firstName" class="signup justify-center items-start px-5 py-5 mt-6 text-xs font-semibold whitespace-nowrap rounded-xl bg-zinc-100 text-zinc-500" placeholder="First Name"></input>
+      <input type="text" id="lastName" class="signup justify-center items-start px-5 py-5 mt-6 text-xs font-semibold whitespace-nowrap rounded-xl bg-zinc-100 text-zinc-500" placeholder="Last Name"></input>
+      <input type="text" id="email" class="signup justify-center items-start px-5 py-5 mt-6 text-xs font-semibold whitespace-nowrap rounded-xl bg-zinc-100 text-zinc-500" placeholder="Email"></input>
+      <input type="password" id="password" class="signup justify-center items-start px-5 py-5 mt-6 text-xs font-semibold whitespace-nowrap rounded-xl bg-zinc-100 text-zinc-500" placeholder="Password"></input>
+      <div id="mycheckbox">
+        <input type="checkbox">
+        <label for="mycheckbox" class="font-montserrat text-xs text-custom_grey2">By proceeding, I agree to all <a href="#">T&C </a> and  <a href="#">Privacy Policy</a></label>
+      </div>
+      <a id="forgot_psswd" class="font-montserrat ml-5 text-xs text-custom_grey2 text-indigo-400 underline hidden" href="#">Forgot Password?</a>
+      <button type="button" id="submitButton" class="create_button justify-center mt-32 ml-3" onclick="movePage()">
+        Create an Account
+      </button>
+    </form>
+    <div class="flex gap-1 mt-3 text-xs font-medium whitespace-nowrap text-zinc-800">
+      <div class="shrink-0 my-auto ml-3 border border-solid bg-zinc-500 border-zinc-500 w-[155px]"></div>
+      <div class="flex-auto">Or</div>
+      <div class="shrink-0 my-auto mr-4 border border-solid bg-zinc-500 border-zinc-500 w-[170px]"></div>
+    </div>
+    <div class="flex gap-5 self-center mt-7">
+      <img src="./images/google.png" alt="Google logo" class="shrink-0 w-11 rounded-lg border border-solid aspect-square border-zinc-500" />
+      <img src="./images/facebook.png" alt="Facebook logo" class="shrink-0 w-11 rounded-lg border border-solid aspect-square border-zinc-500" />
+    </div>
+    <p class="self-center mt-7 text-xs font-medium">
+      <span id="textBeforeLoginSignup">Already have an account?</span>
+      <a href="#" id ="login" class="text-indigo-400 underline" onclick="toggleLoginForm()">Login</a>
+      <a href="#" id ="signup" class="hidden text-indigo-400 underline" onclick="toggleSignUpForm()">Signup</a>
+    </p>
+  </div>
+
+  <script>
+    function toggleLoginForm() {
+      const firstNameInput = document.getElementById('firstName');
+      const lastNameInput = document.getElementById('lastName');
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+      const topHeading = document.getElementById('top-heading');
+      const login = document.getElementById('login');
+      const signup = document.getElementById('signup');
+      const textBeforeLoginSignup = document.getElementById('textBeforeLoginSignup');
+      const submitButton = document.getElementById('submitButton');
+      const mycheckbox = document.getElementById('mycheckbox');
+      const forgot_psswd = document.getElementById('forgot_psswd');
+
+      // Toggle hidden class on first name and last name inputs
+      firstNameInput.classList.toggle('hidden');
+      lastNameInput.classList.toggle('hidden');
+      mycheckbox.classList.toggle('hidden');
+      login.classList.toggle('hidden');
+      emailInput.classList.toggle('move-up-animation');
+      passwordInput.classList.toggle('move-up-animation');
+
+      // Change text content of top-heading
+      topHeading.textContent = 'Welcome back';
+      textBeforeLoginSignup.textContent = 'Dont have an account yet?';
+      submitButton.textContent = 'Sign in';
+      signup.classList.remove('hidden');
+      forgot_psswd.classList.remove('hidden');
+    }
+    function toggleSignUpForm() {
+      location.reload();
+    }
+    function movePage() {
+      console.log('movePage function called');
+      window.location.href='./screen6.html';
+    }
+  </script>
+</body>
+</html>
